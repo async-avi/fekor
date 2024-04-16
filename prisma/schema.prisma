@@ -1,0 +1,62 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User{
+  id String @id @map("_id") @db.ObjectId @default(auto())
+  username String @unique
+  description String
+  imageUrl String
+  Reviews Review[]
+}
+
+model Review {
+  id String @id @map("_id") @db.ObjectId @default(auto())
+  content String
+  author User @relation(fields: [authorId], references: [id])
+  authorId String @db.ObjectId
+  course Course @relation(fields: [courseId], references: [id])
+  courseId String @db.ObjectId
+  likes Int @default(0)
+  createdAt DateTime @default(now())
+}
+
+model Course{
+  id String @id @map("_id") @db.ObjectId @default(auto())
+  title String
+  description String
+  imageUrl String
+  category String[]
+  upVotes Int @default(0)
+  downVotes Int @default(0)
+  url String
+  clicksReceived Int @default(0)
+  ReviewsGiven Review[]
+  isSponserd Boolean
+  publishedBy Publisher @relation(fields: [publisherId], references: [id])
+  publisherId String @db.ObjectId
+}
+
+model Publisher{
+   id String @id @map("_id") @db.ObjectId @default(auto())
+   username String @unique 
+   authenticName String 
+   socials Socials[]
+   isPremium Boolean @default(false)
+   coursesPublished Course[]
+}
+
+type Socials{
+  platform String
+  url String
+}
+
+
+
+
