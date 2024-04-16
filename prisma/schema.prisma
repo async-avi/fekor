@@ -32,6 +32,9 @@ model Course{
   title String
   description String
   imageUrl String
+  watchHours Int
+  actualWatchHours Int @default(0)
+  overallRating Int @default(0)
   category String[]
   upVotes Int @default(0)
   downVotes Int @default(0)
@@ -47,6 +50,7 @@ model Publisher{
    id String @id @map("_id") @db.ObjectId @default(auto())
    username String @unique 
    authenticName String 
+   isVerified Boolean @default(false)
    socials Socials[]
    isPremium Boolean @default(false)
    coursesPublished Course[]
