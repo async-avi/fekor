@@ -11,7 +11,7 @@ function Voting(params: Params) {
   const downVotesPercentage = 100 - upVotesPercentage;
 
   return (
-    <div className="w-full h-14 bg-black flex">
+    <div className="w-full h-14 flex">
       {upVotes < 15 ? (
         <div className="max-w-fit px-1 bg-blue-200 border-[6px] border-blue-800 rounded-l-3xl flex justify-center items-center border-r-2">
           <h1 className="text-blue-800 font-bold">{upVotesPercentage}%</h1>
