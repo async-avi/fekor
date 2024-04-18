@@ -1,12 +1,19 @@
-"use client";
-
-import { selectedCourse } from "@/store/atoms/atom";
-import { useParams } from "next/navigation";
 import React from "react";
-import { RecoilRoot, useRecoilValue } from "recoil";
+import axios from "axios";
+import SingleCourse from "@/components/SingleCourse";
+async function getSpecificData(id: number) {
+  const resp = await axios.get(`http://localhost:3000/v0/api/course/${id}`);
 
-function page() {
-  return <div></div>;
+  return resp.data;
+}
+
+async function page({ params: { id } }: { params: { id: number } }) {
+  const data = await getSpecificData(id);
+  return (
+    <>
+      <SingleCourse course={data} />
+    </>
+  );
 }
 
 export default page;
