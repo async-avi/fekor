@@ -1,16 +1,16 @@
 export interface Course {
   id: number;
-  title: String;
-  description: String;
-  imageUrl: String;
-  watchHours: Number;
-  actualWatchHours: Number;
-  totalReviews: Number;
-  category: String[];
-  upVotes: Number;
-  downVotes: Number;
-  url: String;
-  clicksReceived: Number;
-  isSponsored: Boolean;
-  publisherId: String;
+  title: string;
+  description: string;
+  imageUrl: string;
+  watchHours: number;
+  actualWatchHours: number;
+  totalReviews: number;
+  category: string[];
+  upVotes: number;
+  downVotes: number;
+  url: string;
+  clicksReceived: number;
+  isSponsored: boolean;
+  publisherId: string;
 }
