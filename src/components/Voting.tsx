@@ -11,7 +11,7 @@ function Voting(params: Params) {
   const downVotesPercentage = 100 - upVotesPercentage;
 
   return (
-    <>
+    <div className="my-4 w-full">
       <div className="w-full h-14 flex">
         {upVotes < 15 ? (
           <div className="max-w-fit px-1 bg-blue-200 border-[6px] border-blue-800 rounded-l-3xl flex justify-center items-center border-r-2">
@@ -48,7 +48,7 @@ function Voting(params: Params) {
           <h4 className="text-xs self-center font-semibold">DownVotes</h4>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

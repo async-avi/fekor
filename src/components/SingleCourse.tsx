@@ -1,6 +1,8 @@
 import { Course } from "@/constants/interfaces";
 import React from "react";
 import Voting from "./Voting";
+import WatchHours from "./WatchHours";
+import ReactionReview from "./ReactionReview";
 
 function SingleCourse({ course }: { course: Course }) {
   const {
@@ -20,7 +22,6 @@ function SingleCourse({ course }: { course: Course }) {
     publisherId,
   } = course;
 
-  const upvotePercentage = Math.floor((upVotes / (upVotes + downVotes)) * 100);
   return (
     <div className="h-screen w-screen p-5" key={id}>
       <h1 className="text-2xl font-bold">{title}</h1>
@@ -29,6 +30,13 @@ function SingleCourse({ course }: { course: Course }) {
         alt={`${title} image`}
         className="w-[100%] rounded-lg"
       />
+      <div className="flex gap-2">
+        <WatchHours
+          watchHours={watchHours}
+          actualWatchHours={actualWatchHours}
+        />
+        <ReactionReview />
+      </div>
       <Voting upVotes={upVotes} downVotes={downVotes} />
     </div>
   );
