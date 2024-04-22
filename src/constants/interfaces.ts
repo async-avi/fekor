@@ -13,4 +13,14 @@ export interface Course {
   clicksReceived: number;
   isSponsored: boolean;
   publisherId: string;
+  reviews: Review[];
+}
+
+interface Review {
+  author: string;
+  description: string;
+  profilePic: string;
+  username: string;
+  likes: number;
+  createdAt: string;
 }
