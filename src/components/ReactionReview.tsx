@@ -1,6 +1,10 @@
 import React from "react";
 
-function ReactionReview() {
+interface Props {
+  totalReviews: number;
+}
+
+function ReactionReview({ totalReviews }: Props) {
   return (
     <div className="w-44 h-44 bg-gray-800 rounded-lg flex flex-col px-3">
       <div className="h-1/2 w-full justify-center items-center flex">
@@ -8,7 +12,9 @@ function ReactionReview() {
       </div>
       <div className="text-white">
         <h1 className="text-base font-semibold">Reviews</h1>
-        <h2 className="font-bold text-xl">200k+</h2>
+        <h2 className="font-bold text-xl">
+          {totalReviews < 1000 ? totalReviews.toString() : "1k+"}
+        </h2>
       </div>
     </div>
   );
