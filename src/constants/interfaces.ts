@@ -21,6 +21,6 @@ interface Review {
   description: string;
   profilePic: string;
   username: string;
-  likes: number;
+  likeCount: number;
   createdAt: string;
 }
