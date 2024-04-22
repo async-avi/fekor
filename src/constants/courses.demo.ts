@@ -230,6 +230,7 @@ export const coursesArr = [
     clicksReceived: 250,
     isSponsored: true,
     publisherId: "publisher789",
+    reviews: [],
   },
   {
     id: 4,
@@ -247,6 +248,7 @@ export const coursesArr = [
     clicksReceived: 180,
     isSponsored: false,
     publisherId: "publisher101",
+    reviews: [],
   },
   {
     id: 5,
@@ -263,5 +265,6 @@ export const coursesArr = [
     clicksReceived: 300,
     isSponsored: true,
     publisherId: "publisher202",
+    reviews: [],
   },
 ];
