@@ -11,27 +11,30 @@ function Voting(params: Params) {
   const downVotesPercentage = 100 - upVotesPercentage;
 
   return (
-    <div className="my-4 w-full">
+    <div className="my-6 w-full px-2 flex flex-col">
+      <h1 className="font-bold self-center text-sm my-2">
+        Votes: {upVotes + downVotes}
+      </h1>
       <div className="w-full h-14 flex">
         {upVotes < 15 ? (
-          <div className="max-w-fit px-1 bg-blue-200 border-[6px] border-blue-800 rounded-l-3xl flex justify-center items-center border-r-2">
+          <div className="max-w-fit px-1 bg-blue-200 border-2 border-blue-800 rounded-l-3xl flex justify-center items-center border-r-2">
             <h1 className="text-blue-800 font-bold">{upVotesPercentage}%</h1>
           </div>
         ) : (
           <div
-            className="bg-blue-200 h-full flex justify-center items-center rounded-l-3xl border-[6px] border-blue-800 border-r-2"
+            className="bg-blue-200 h-full flex justify-center items-center rounded-l-2xl border-2 border-blue-800 border-r-2"
             style={{ width: `${upVotesPercentage}%` }}
           >
             <h1 className="text-blue-800 font-bold">{upVotesPercentage}%</h1>
           </div>
         )}
         {downVotes < 15 ? (
-          <div className="max-w-fit px-1 bg-red-200 border-[6px] border-red-800 rounded-r-3xl flex justify-center items-center border-l-4">
+          <div className="max-w-fit px-1 bg-red-200 border-2 border-red-800 rounded-r-2xl flex justify-center items-center border-l-2">
             <h1 className="text-red-800 font-bold">{downVotesPercentage}%</h1>
           </div>
         ) : (
           <div
-            className="bg-red-200 h-full flex justify-center items-center rounded-r-3xl border-[6px] border-red-800 border-l-4"
+            className="bg-red-200 h-full flex justify-center items-center rounded-r-2xl border-2 border-red-800 border-l-2"
             style={{ width: `${downVotesPercentage}%` }}
           >
             <h1 className="text-red-800 font-bold">{downVotesPercentage}%</h1>
