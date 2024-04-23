@@ -8,7 +8,7 @@ export const coursesArr = [
     watchHours: 20,
     actualWatchHours: 15,
     totalReviews: 10,
-    category: ["Data Science", "Technology"],
+    category: ["Data Science", "Technology", "hot"],
     upVotes: 20,
     downVotes: 80,
     url: "https://example.com/intro-to-data-science",
