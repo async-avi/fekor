@@ -41,6 +41,16 @@ export const coursesArr = [
         likeCount: 15,
         username: "data_geek_123",
         createdAt: "2024-04-18T16:30:20.000Z",
+        replies: [
+          {
+            author: "JohnDoe",
+            username: "john_king990",
+            description: "Great course! Very informative and well-structured.",
+            profilePic: "https://randomuser.me/api/portraits/men/16.jpg",
+            likeCount: 10,
+            createdAt: "2024-04-18T16:30:20.000Z",
+          },
+        ],
       },
       {
         author: "TechEnthusiast",

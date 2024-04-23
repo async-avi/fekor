@@ -23,4 +23,15 @@ interface Review {
   username: string;
   likeCount: number;
   createdAt: string;
+  replies: Reply[];
+}
+
+export interface Reply {
+  author: string;
+  description: string;
+  profilePic: string;
+  likeCount: number;
+  createdAt: string;
+  username: string;
+  replies: Reply[];
 }
