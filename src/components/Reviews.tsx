@@ -1,5 +1,11 @@
+import { coursesArr } from "@/constants/courses.demo";
+import { Reply } from "@/constants/interfaces";
 import { ThickArrowDownIcon, ThickArrowUpIcon } from "@radix-ui/react-icons";
 import React from "react";
+
+function Replies(reply: Reply[]) {
+  return <>Hello</>;
+}
 
 interface Props {
   author: string;
@@ -8,6 +14,7 @@ interface Props {
   username: string;
   likeCount: number;
   createdAt: string;
+  replies?: Reply[];
 }
 function Reviews({
   author,
@@ -16,13 +23,19 @@ function Reviews({
   username,
   likeCount,
   createdAt,
+  replies,
 }: Props) {
   const date = new Date(createdAt);
-  const displayDate = `${date.toLocaleString("en-IN", {
+  const dateNow = new Date();
+  let displayDate = `${date.toLocaleString("en-IN", {
     month: "short",
     day: "2-digit",
     year: "numeric",
   })}`;
+
+  if (date == dateNow) {
+    displayDate = `Today ${date.getHours()}:${date.getMinutes()}`;
+  }
 
   return (
     <div className="py-4 px-1 shadow-lg rounded-lg">
