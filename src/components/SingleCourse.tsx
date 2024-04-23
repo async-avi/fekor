@@ -23,10 +23,26 @@ function SingleCourse({ course }: { course: Course }) {
     publisherId,
     reviews,
   } = course;
+  const isHot = category.find((c) => c == "hot");
 
   return (
     <div className="h-screen w-screen p-5" key={id}>
       <h1 className="text-2xl font-bold">{title}</h1>
+
+      <div className="text-sm flex gap-2 my-2">
+        {isSponsored ? (
+          <h1 className="border border-yellow-600 text-yellow-600 font-semibold rounded-2xl px-3 py-1">
+            Sponsored
+          </h1>
+        ) : null}
+
+        {isHot ? (
+          <h1 className="self-center border border-black px-3 rounded-2xl py-1 font-semibold text-white bg-gray-800">
+            &#128293; Hot
+          </h1>
+        ) : null}
+      </div>
+
       <img
         src={imageUrl}
         alt={`${title} image`}
@@ -44,7 +60,7 @@ function SingleCourse({ course }: { course: Course }) {
         <div>
           <h1 className="text-2xl font-semibold">Reviews: {reviews.length}</h1>
           {reviews.map((review) => {
-            return <Reviews {...review} />;
+            return <Reviews {...review} key={review.username} />;
           })}
         </div>
       ) : (
