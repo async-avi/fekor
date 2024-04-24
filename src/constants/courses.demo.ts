@@ -6,8 +6,8 @@ export const coursesArr = [
     imageUrl:
       "https://answersq.com/wp-content/uploads/2022/12/free-data-science-courses.webp",
     watchHours: 20,
-    actualWatchHours: 15,
-    totalReviews: 10,
+    actualWatchHours: 12,
+    totalReviews: 11,
     category: ["Data Science", "Technology", "hot"],
     upVotes: 20,
     downVotes: 80,
