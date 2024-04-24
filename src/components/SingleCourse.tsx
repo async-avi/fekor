@@ -13,12 +13,10 @@ function SingleCourse({ course }: { course: Course }) {
     imageUrl,
     watchHours,
     actualWatchHours,
-    totalReviews,
     category,
     upVotes,
     downVotes,
     url,
-    clicksReceived,
     isSponsored,
     publisherId,
     reviews,
@@ -33,12 +31,6 @@ function SingleCourse({ course }: { course: Course }) {
         {isSponsored ? (
           <h1 className="border border-yellow-600 text-yellow-600 font-semibold rounded-2xl px-3 py-1">
             Sponsored
-          </h1>
-        ) : null}
-
-        {isHot ? (
-          <h1 className="self-center border border-black px-3 rounded-2xl py-1 font-semibold text-white bg-gray-800">
-            &#128293; Hot
           </h1>
         ) : null}
       </div>
