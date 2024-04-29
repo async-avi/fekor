@@ -7,7 +7,7 @@ interface Props {
   id: number;
   title: string;
   description: string;
-  isSponsered: boolean;
+  isSponsored: boolean;
   category: string[];
   publisherId: string;
 }
@@ -16,20 +16,25 @@ async function CourseCard({
   id,
   title,
   description,
-  isSponsered,
+  isSponsored,
   category,
   publisherId,
 }: Props) {
   const isHot = category.find((c) => c == "hot");
 
+  let hoverGold = "hover:border hover:border-gold";
   //   const avatar = await getAvatar(publisherId);
 
   return (
     <Link href={`courses/${id}`} key={id}>
-      <div className="m-4 p-2 shadow-md rounded-xl">
+      <div
+        className={`shadow-md rounded-xl px-3 py-3 ${
+          isSponsored ? hoverGold : null
+        }`}
+      >
         <h1 className="text-2xl font-bold">{title}</h1>
         <div className="flex gap-2">
-          {isSponsered ? <CategoryTab category="Sponsored" /> : null}
+          {isSponsored ? <CategoryTab category="Sponsored" /> : null}
           {isHot ? <CategoryTab category="Hot" bgColor="bg-gray-800" /> : null}
         </div>
         <h2 className="font-semibold pt-1.5">{description}</h2>
