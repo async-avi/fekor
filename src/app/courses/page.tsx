@@ -3,10 +3,8 @@ import { Course } from "@/constants/interfaces";
 import CourseCard from "@/components/CourseCard";
 
 async function fetchData() {
-  const res = await fetch(`http://localhost:3000/v0/api/course`, {
-    cache: "force-cache",
-  });
-  const result = await res.json();
+  const res = await axios.get(`http://localhost:3000/v0/api/course`);
+  const result = await res.data;
   return result;
 }
 export default async function page() {
@@ -15,20 +13,21 @@ export default async function page() {
 
   return (
     <>
-      <div className="px-2">
-        {data.map((course) => {
-          return (
-            <CourseCard
-              key={course.id}
-              category={course.category}
-              description={course.description}
-              id={course.id}
-              isSponsered={course.isSponsored}
-              publisherId={course.publisherId}
-              title={course.title}
-            />
-          );
-        })}
+      <div className="md:grid grid-cols-5 md:px-20">
+        <div className="hidden md:flex border border-black px-2 py-1">
+          {/* {" // todo: sidebar"} */}
+          hi
+        </div>
+        <div className="col-span-3 px-2 py-3 flex flex-col gap-5">
+          {data.map((c) => {
+            //just for trial
+            // todo: isSponsered through category
+            return <CourseCard {...c} key={c.id} />;
+          })}
+        </div>
+        <div className="border border-black px-2 py-1 hidden md:flex sticky">
+          hi
+        </div>
       </div>
     </>
   );
