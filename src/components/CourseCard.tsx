@@ -26,7 +26,7 @@ async function CourseCard({
   //   const avatar = await getAvatar(publisherId);
 
   return (
-    <Link href={`courses/${id}`} key={id}>
+    <Link href={`courses/${id}`} key={id} className="m-1">
       <div
         className={`shadow-md rounded-xl px-3 py-3 ${
           isSponsored ? hoverGold : null
